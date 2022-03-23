@@ -1,5 +1,7 @@
 # vscode-extension-hello-world
-README
+
+VSCode Extension 測試程式
+
 
 
 
