@@ -10,15 +10,16 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:vscode-extension-hello-world.helloWorld",
+		"onCommand:extension.helloWorld",
 		"onCommand:extension.createComponent"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "vscode-extension-hello-world.helloWorld",
-				"title": "Hello World"
+				"command": "extension.helloWorld",
+				"title": "😈Hello World",
+				"category": "Files and Folder"
 			},
 			{
 				"command": "extension.createComponent",
@@ -29,11 +30,19 @@
 		"menus": {
 			"editor/context": [
 				{
+					"command": "extension.helloWorld",
+					"group": "navigation"
+				},
+				{
 					"command": "extension.createComponent",
 					"group": "navigation"
 				}
 			],
 			"explorer/context": [
+				{
+					"command": "extension.helloWorld",
+					"group": "navigation"
+				},
 				{
 					"command": "extension.createComponent",
 					"group": "navigation"
@@ -42,8 +51,12 @@
 		},
 		"keybindings": [
 			{
-				"command": "extension.createComponent",
+				"command": "extension.helloWorld",
 				"key": "ctrl+alt+n"
+			},
+			{
+				"command": "extension.createComponent",
+				"key": "ctrl+alt+o"
 			}
 		]
 	},
