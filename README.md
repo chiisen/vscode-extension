@@ -31,8 +31,10 @@ vsce package
 ```
 `README.md` 記得要修改唷，不然編譯不過
 
+# 解決 vsce 編譯錯誤
 ![編譯錯誤](./docs/images/yo_code_03.png)
-* 記得執行 ==npm ci==
+😁解決方法: "skipLibCheck": true => tsconfig.json
+* 記得先執行 ==npm ci==
 
 # 上傳 .vsix
 https://aka.ms/SignupAzureDevOps
