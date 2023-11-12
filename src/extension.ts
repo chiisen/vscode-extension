@@ -8,7 +8,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 	// Use the console to output diagnostic information (console.log) and errors (console.error)
 	// This line of code will only be executed once when your extension is activated
-	console.log('恭喜, 你的套件 "Hello World" 現在激活了!');
+	console.log('👍恭喜, 你的套件 "Hello World" 現在激活了!');// 寫到【偵錯主控台】
 
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with registerCommand
@@ -16,8 +16,9 @@ export function activate(context: vscode.ExtensionContext) {
 	let disposable1 = vscode.commands.registerCommand('extension.helloWorld', () => {
 		// The code you place here will be executed every time your command is executed
 		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from vscode-extension!');
-		console.log('Hello World from vscode-extension!');
+		vscode.window.showInformationMessage('✡️Hello World from vscode-extension!');
+		
+		console.log('👍Hello World from vscode-extension!');// 寫到【偵錯主控台】
 	});
 
 	context.subscriptions.push(disposable1);
@@ -38,7 +39,7 @@ export function activate(context: vscode.ExtensionContext) {
 				ignoreFocusOut: true,
 				valueSelection: [-1, -1],
 			})) || ``;
-			vscode.window.showInformationMessage('剛剛輸入的套件名稱: ' + dir);
+			vscode.window.showInformationMessage('✡️剛剛輸入的套件名稱: ' + dir);
 	});
 
 	context.subscriptions.push(disposable2);

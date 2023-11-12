@@ -18,12 +18,12 @@
 		"commands": [
 			{
 				"command": "extension.helloWorld",
-				"title": "😈Hello World",
+				"title": "😈extension.helloWorld->Title",
 				"category": "Files and Folder"
 			},
 			{
 				"command": "extension.createComponent",
-				"title": "🤡create Component - Hello World",
+				"title": "🤡extension.createComponent->Title",
 				"category": "Files and Folder"
 			}
 		],
