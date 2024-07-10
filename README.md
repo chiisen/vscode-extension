@@ -66,3 +66,11 @@ Details 裡面有 publisher id: vscode-extension-hello-world-1221
 3. 瀏覽到您存儲的 .vsix 檔案所在位置，選擇該檔案，然後點擊「安裝」。
 4. 安裝完成後，您的新擴展就會出現在您的擴展清單中。
 
+# git commit message
+- 常用描述
+```
+✨ feat: 需求功能描述
+🐛 fix: 修正 bug 的問題描述
+💄 optimize: 最佳化程式碼或功能流程
+🔧 chore: 雜事，例如: 調整設定檔案等等 
+```
