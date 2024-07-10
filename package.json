@@ -10,16 +10,16 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:extension.helloWorld",
+		"onCommand:extension.help",
 		"onCommand:extension.createComponent"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "extension.helloWorld",
-				"title": "😈extension.helloWorld->Title",
-				"category": "Files and Folder"
+				"command": "extension.help",
+				"title": "⚠extension.help",
+				"category": "VSCode Extension 功能說明"
 			},
 			{
 				"command": "extension.createComponent",
@@ -30,7 +30,7 @@
 		"menus": {
 			"editor/context": [
 				{
-					"command": "extension.helloWorld",
+					"command": "extension.help",
 					"group": "navigation"
 				},
 				{
@@ -40,7 +40,7 @@
 			],
 			"explorer/context": [
 				{
-					"command": "extension.helloWorld",
+					"command": "extension.help",
 					"group": "navigation"
 				},
 				{
@@ -51,7 +51,7 @@
 		},
 		"keybindings": [
 			{
-				"command": "extension.helloWorld",
+				"command": "extension.help",
 				"key": "ctrl+alt+n"
 			},
 			{
