@@ -5,6 +5,6 @@
 		"dbaeumer.vscode-eslint"
 	],
 	"unwantedRecommendations": [
-        "publisher.vscode-extension-hello-world"
+        "fittentech.fitten-code"
     ]
 }
