@@ -1,25 +1,25 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
+// 'vscode' 模組包含了 VS Code 的擴展 API
+// 匯入該模組並在下面的程式碼中使用別名 vscode 來引用它
 import * as vscode from "vscode";
 
-// this method is called when your extension is activated
-// your extension is activated the very first time the command is executed
+// 當你的擴展被激活時會調用這個方法
+// 當命令第一次被執行時，你的擴展會被激活
 export function activate(context: vscode.ExtensionContext) {
   // VSCode Extension 的名稱
   const vscodeExtensionName = "vscode-extension-hello-world";
 
-  // Use the console to output diagnostic information (console.log) and errors (console.error)
-  // This line of code will only be executed once when your extension is activated
+  // 使用控制台輸出診斷信息 (console.log) 和錯誤 (console.error)
+  // 這行程式碼只會在你的擴展被激活時執行一次
   console.log(
     `👍恭喜, 你的 VSCode Extension: "${vscodeExtensionName}" 現在激活了❗`
   ); // 寫到【偵錯主控台】
 
-  // The command has been defined in the package.json file
-  // Now provide the implementation of the command with registerCommand
-  // The commandId parameter must match the command field in package.json
+  // 命令已在 package.json 文件中定義
+  // 現在使用 registerCommand 提供命令的實現
+  // commandId 參數必須與 package.json 中的命令字段匹配
   let disposable1 = vscode.commands.registerCommand("extension.help", () => {
-    // The code you place here will be executed every time your command is executed
-    // Display a message box to the user
+    // 你放在這裡的程式碼會在每次命令執行時運行
+    // 向使用者顯示一個訊息框
     vscode.window.showInformationMessage(
       `👍 你好，這是 VSCode Extension: "${vscodeExtensionName}" ❗`
     ); // 顯示在右下角的通知訊息
@@ -54,5 +54,5 @@ export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(disposable2);
 }
 
-// this method is called when your extension is deactivated
+// 當你的擴展被停用時會調用這個方法
 export function deactivate() {}

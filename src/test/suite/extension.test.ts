@@ -1,14 +1,14 @@
 import * as assert from 'assert';
 
-// You can import and use all API from the 'vscode' module
-// as well as import your extension to test it
+// 你可以從 'vscode' 模組中匯入並使用所有 API
+// 以及匯入你的擴展來測試它
 import * as vscode from 'vscode';
 // import * as myExtension from '../../extension';
 
-suite('Extension Test Suite', () => {
+suite('擴展測試套件', () => {
 	vscode.window.showInformationMessage('Start all tests.');
 
-	test('Sample test', () => {
+	test('範例測試', () => {
 		assert.strictEqual(-1, [1, 2, 3].indexOf(5));
 		assert.strictEqual(-1, [1, 2, 3].indexOf(0));
 	});
