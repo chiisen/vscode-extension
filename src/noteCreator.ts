@@ -44,14 +44,16 @@ export async function createNote(): Promise<void> {
     placeHolder: '例如：我的筆記'
   });
 
-  if (!title) {
+  if (!title?.trim()) {
     return;
   }
 
+  const trimmedTitle = title.trim();
+
   const noteDir = getNotePath();
-  const filename = titleToFilename(title);
+  const filename = titleToFilename(trimmedTitle);
   const fullPath = path.join(noteDir, filename);
-  const content = generateNoteContent(title);
+  const content = generateNoteContent(trimmedTitle);
 
   const uri = vscode.Uri.file(fullPath);
 
@@ -67,11 +69,15 @@ export async function createNote(): Promise<void> {
       await vscode.workspace.fs.createDirectory(dirUri);
     }
 
-    await vscode.workspace.fs.writeFile(uri, Buffer.from(content));
+    try {
+      await vscode.workspace.fs.writeFile(uri, Buffer.from(content));
 
-    const doc = await vscode.workspace.openTextDocument(uri);
-    await vscode.window.showTextDocument(doc);
+      const doc = await vscode.workspace.openTextDocument(uri);
+      await vscode.window.showTextDocument(doc);
 
-    vscode.window.showInformationMessage(`筆記已建立：${filename}`);
+      vscode.window.showInformationMessage(`筆記已建立：${filename}`);
+    } catch (writeError) {
+      vscode.window.showErrorMessage(`建立筆記失敗：${writeError}`);
+    }
   }
 }
