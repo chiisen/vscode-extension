@@ -11,7 +11,8 @@
 	],
 	"activationEvents": [
 		"onCommand:extension.help",
-		"onCommand:extension.createComponent"
+		"onCommand:extension.createComponent",
+		"onCommand:extension.createNote"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -25,6 +26,11 @@
 				"command": "extension.createComponent",
 				"title": "🤡extension.createComponent->Title",
 				"category": "Files and Folder"
+			},
+			{
+				"command": "extension.createNote",
+				"title": "📝 建立筆記",
+				"category": "Notes"
 			}
 		],
 		"menus": {
@@ -36,6 +42,10 @@
 				{
 					"command": "extension.createComponent",
 					"group": "navigation"
+				},
+				{
+					"command": "extension.createNote",
+					"group": "navigation"
 				}
 			],
 			"explorer/context": [
@@ -45,6 +55,10 @@
 				},
 				{
 					"command": "extension.createComponent",
+					"group": "navigation"
+				},
+				{
+					"command": "extension.createNote",
 					"group": "navigation"
 				}
 			]
@@ -57,8 +71,22 @@
 			{
 				"command": "extension.createComponent",
 				"key": "ctrl+alt+o"
+			},
+			{
+				"command": "extension.createNote",
+				"key": "ctrl+alt+m"
 			}
-		]
+		],
+		"configuration": {
+			"title": "VSCode Extension Notes",
+			"properties": {
+				"vscodeExtension.notePath": {
+					"type": "string",
+					"default": "~/notes",
+					"description": "筆記存放位置"
+				}
+			}
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
