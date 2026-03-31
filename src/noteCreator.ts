@@ -15,7 +15,7 @@ function titleToFilename(title: string): string {
   const sanitizedTitle = title
     .toLowerCase()
     .replace(/\s+/g, '-')
-    .replace(/[^\w\u4e00-\u9fff\-]/g, '');
+    .replace(/[^\w\u4e00-\u9fff-]/g, '');
   return `${dateStr}-${sanitizedTitle}.md`;
 }
 
@@ -41,7 +41,7 @@ export async function createNote(): Promise<void> {
   const title = await vscode.window.showInputBox({
     prompt: '請輸入筆記標題',
     ignoreFocusOut: true,
-    placeHolder: '例如：我的筆記'
+    placeHolder: '例如：我的筆記',
   });
 
   if (!title?.trim()) {
