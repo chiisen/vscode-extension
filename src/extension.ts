@@ -2,6 +2,8 @@
 // 匯入該模組並在下面的程式碼中使用別名 vscode 來引用它
 import * as vscode from "vscode";
 
+import { createNote } from './noteCreator';
+
 // 當你的擴展被激活時會調用這個方法
 // 當命令第一次被執行時，你的擴展會被激活
 export function activate(context: vscode.ExtensionContext) {
@@ -52,6 +54,13 @@ export function activate(context: vscode.ExtensionContext) {
   );
 
   context.subscriptions.push(disposable2);
+
+  let disposable3 = vscode.commands.registerCommand(
+    'extension.createNote',
+    createNote
+  );
+
+  context.subscriptions.push(disposable3);
 }
 
 // 當你的擴展被停用時會調用這個方法
