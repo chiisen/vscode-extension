@@ -2,7 +2,7 @@ import * as vscode from 'vscode';
 import * as path from 'path';
 import { homedir } from 'os';
 
-function getDateString(): string {
+export function getDateString(): string {
   const now = new Date();
   const year = now.getFullYear();
   const month = String(now.getMonth() + 1).padStart(2, '0');
@@ -10,7 +10,7 @@ function getDateString(): string {
   return `${year}-${month}-${day}`;
 }
 
-function titleToFilename(title: string): string {
+export function titleToFilename(title: string): string {
   const dateStr = getDateString();
   const sanitizedTitle = title
     .toLowerCase()
@@ -19,7 +19,7 @@ function titleToFilename(title: string): string {
   return `${dateStr}-${sanitizedTitle}.md`;
 }
 
-function generateNoteContent(title: string): string {
+export function generateNoteContent(title: string): string {
   const dateStr = getDateString();
   return `# ${title}
 
