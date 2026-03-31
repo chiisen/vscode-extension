@@ -15,7 +15,7 @@ function titleToFilename(title: string): string {
   const sanitizedTitle = title
     .toLowerCase()
     .replace(/\s+/g, '-')
-    .replace(/[^\w\-]/g, '');
+    .replace(/[^\w\u4e00-\u9fff\-]/g, '');
   return `${dateStr}-${sanitizedTitle}.md`;
 }
 
