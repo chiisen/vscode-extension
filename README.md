@@ -38,18 +38,79 @@ vscode-extension/
 
 ## 核心功能
 
-1. **extension.help** - 顯示說明訊息 (`Ctrl+Alt+N`)
-2. **extension.createComponent** - 輸入框示範 (`Ctrl+Alt+O`)，目前為 placeholder
+| 命令 | 快捷鍵 | 說明 |
+|------|--------|------|
+| `extension.help` | `Ctrl+Alt+N` | 顯示擴充功能說明訊息 |
+| `extension.createComponent` | `Ctrl+Alt+O` | 輸入框示範 (placeholder) |
+| `extension.createNote` | `Ctrl+Alt+M` | 快速建立 Markdown 筆記 |
+
+### 📝 建立筆記功能
+
+快速建立帶日期標題的 Markdown 筆記檔案。
+
+**使用方式：**
+1. 按 `Ctrl+Alt+M` 或右鍵選單選擇「📝 建立筆記」
+2. 輸入筆記標題
+3. 自動建立檔案並開啟
+
+**檔名格式：** `YYYY-MM-DD-標題.md`（例如：`2026-03-31-my-note.md`）
+
+**檔案內容範例：**
+```markdown
+# 我的筆記
+
+日期：2026-03-31
+
+---
+
+內容...
+```
+
+## 設定項
+
+| 設定 Key | 預設值 | 說明 |
+|----------|--------|------|
+| `vscodeExtension.notePath` | `~/notes` | 筆記存放位置 |
+
+**設定方式：**
+1. 開啟 VSCode 設定 (`Ctrl+,`)
+2. 搜尋 `vscodeExtension.notePath`
+3. 設定自訂路徑（支援 `~` 代表 home directory）
+
+**設定範例 (settings.json)：**
+```json
+{
+  "vscodeExtension.notePath": "~/Documents/notes"
+}
+```
 
 ## 技術特點
 
 - 延遲載入
 - 右鍵選單整合
-- 完整的 TypeScript + ESLint + 測試環境
+- 完整的 TypeScript + ESLint + Prettier + 測試環境
+
+## 開發工具
+
+| 工具 | 說明 |
+|------|------|
+| **TypeScript** | 4.5.5，嚴格模式 |
+| **ESLint** | @typescript-eslint/recommended + Prettier 整合 |
+| **Prettier** | 代碼格式化工具 |
+| **Mocha** | 測試框架 (TDD) |
+
+**常用指令：**
+```bash
+npm run compile    # 編譯 TypeScript
+npm run lint       # ESLint 檢查
+npm run format     # Prettier 格式化
+npm run test       # 執行測試
+```
 
 ## 目前狀態
 
-功能骨架完整，但 `createComponent` 命令僅收集輸入，尚未實作實際建立檔案的邏輯。適合作為擴充功能開發的起點。
+- ✅ `createNote` 命令已實作完成
+- ⏳ `createComponent` 命令為 placeholder，待開發
 
 ## 相關文件
 
